@@ -2,124 +2,177 @@
 # 🍌 Automated Detection and Classification of Banana Leaf Diseases Using CNN with Spatial Attention Mechanism
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-Deep%20Learning-blue?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/TensorFlow-CNN-orange?style=for-the-badge&logo=tensorflow" />
-  <img src="https://img.shields.io/badge/Computer%20Vision-Image%20Classification-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Research-Agricultural%20AI-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-Deep%20Learning-blue?style=for-the-badge&logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/CNN-Spatial%20Attention-orange?style=for-the-badge" alt="CNN">
+  <img src="https://img.shields.io/badge/Test%20Accuracy-97.50%25-brightgreen?style=for-the-badge" alt="Accuracy">
+  <img src="https://img.shields.io/badge/Research-Computer%20Vision-purple?style=for-the-badge" alt="Research">
 </p>
 
 <p align="center">
-  <b>An attention-enhanced Convolutional Neural Network for accurate and interpretable banana leaf disease classification.</b>
+  <b>Automated identification of banana leaf diseases using a custom Convolutional Neural Network integrated with a KernelAttention spatial attention mechanism.</b>
 </p>
 
 <p align="center">
-  <a href="#-project-overview">Overview</a> •
+  <a href="#-overview">Overview</a> •
   <a href="#-dataset">Dataset</a> •
-  <a href="#-proposed-architecture">Architecture</a> •
-  <a href="#-experimental-results">Results</a> •
-  <a href="#-grad-cam-explainability">Explainability</a>
+  <a href="#-proposed-methodology">Methodology</a> •
+  <a href="#-model-architecture">Architecture</a> •
+  <a href="#-results-and-performance">Results</a> •
+  <a href="#-grad-cam-explainability">Grad-CAM</a>
 </p>
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-Banana is an economically important agricultural crop that supports food security and provides income to farmers, particularly in tropical and subtropical regions.
+Banana is an economically important agricultural crop that contributes to global food security and provides income to millions of farmers.
 
-However, banana production is seriously affected by fungal leaf diseases, which reduce photosynthetic activity, damage leaves, and negatively affect crop yields.
+However, banana production is affected by various diseases, particularly fungal infections that damage leaves and reduce photosynthetic activity.
 
-Traditional disease identification depends on manual inspections by agricultural specialists. Such methods can be time-consuming, expensive, and difficult to scale to large farming environments.
+Traditional identification of banana leaf diseases relies on manual inspection by agricultural experts. These methods can be time-consuming, expensive, and difficult to implement on a large scale.
 
-This research proposes a **Convolutional Neural Network (CNN) integrated with a custom spatial attention mechanism called KernelAttention** to automatically classify banana leaf images into four categories.
+This project presents an automated deep learning-based approach for detecting and classifying banana leaf diseases using a **Convolutional Neural Network (CNN) integrated with a custom spatial attention mechanism called KernelAttention**.
 
-### Supported Classes
+The proposed model is designed to identify four categories:
 
-1. **Healthy**
-2. **Sigatoka**
-3. **Cordana Leaf Spot**
-4. **Pestalotiopsis Leaf Blight**
+1. Healthy Banana Leaves
+2. Sigatoka Disease
+3. Cordana Leaf Spot
+4. Pestalotiopsis Leaf Blight
 
-The model learns disease-specific visual patterns such as lesions, discoloration, necrotic regions, and irregular spots.
+The KernelAttention mechanism helps the network emphasize important regions of leaf images while learning disease-related visual patterns.
 
-Unlike a conventional CNN, the proposed architecture includes spatial attention modules that selectively emphasize important regions in the feature maps.
+The model achieved a **97.50% test classification accuracy** using a dataset of banana leaf images collected under natural agricultural conditions.
 
-The model achieved **97.50% classification accuracy on a test dataset containing 760 images**.
+### Key Project Highlights
+
+| Feature | Description |
+|---|---|
+| Project Domain | Artificial Intelligence in Agriculture |
+| Primary Technique | Convolutional Neural Network |
+| Proposed Mechanism | KernelAttention Spatial Attention |
+| Dataset | BananaLSD |
+| Original Images | 937 |
+| Augmented Images | 1,600 |
+| Final Training Images | 1,351 |
+| Validation Images | 120 |
+| Testing Images | 760 |
+| Input Image Resolution | 224 × 224 |
+| Classification Categories | 4 |
+| Training Epochs | 40 |
+| Test Accuracy | **97.50%** |
+| Explainability | Grad-CAM |
+| Evaluation | Accuracy, Precision, Recall, F1, Specificity, ROC-AUC |
+
+---
+
+## 🎯 Problem Statement
+
+Banana leaf diseases cause significant damage to agricultural production.
+
+Early-stage infections are often difficult to distinguish because different diseases may share similar visual symptoms, including discoloration, dark spots, necrotic regions, and lesions.
+
+Manual disease identification introduces several difficulties:
+
+- Dependence on trained agricultural specialists
+- Delays in identifying diseases
+- Limited access to experts in rural farming regions
+- Difficulty inspecting large plantations
+- Similar visual symptoms among different fungal infections
+- Variations in lighting, leaf orientation, and image background
+
+An automated image classification model can help identify disease categories from leaf photographs.
+
+The proposed system addresses this problem through deep learning and spatial attention.
 
 ---
 
 ## 🎯 Research Objectives
 
-The primary objectives of this research are:
+The main objectives are:
 
-- Develop a deep learning system for automated banana leaf disease classification.
-- Identify three major banana leaf diseases and distinguish them from healthy leaves.
-- Design a CNN architecture integrated with a custom spatial attention mechanism.
-- Improve disease feature extraction through hierarchical attention.
-- Address class imbalance using image augmentation.
-- Evaluate the model using accuracy, precision, recall, specificity, F1-score, and ROC-AUC.
-- Analyze prediction errors using a confusion matrix.
-- Provide interpretable predictions using Grad-CAM.
-- Explore the potential of computer vision in agricultural disease diagnosis.
+1. Design an automated banana leaf disease classification system.
+2. Develop a CNN model capable of distinguishing four banana leaf conditions.
+3. Integrate a custom KernelAttention mechanism into the CNN.
+4. Improve feature extraction by emphasizing important spatial regions.
+5. Reduce dataset imbalance using image augmentation.
+6. Evaluate classification performance using standard machine learning metrics.
+7. Analyze classification errors using a confusion matrix.
+8. Generate ROC curves and calculate AUC values.
+9. Apply Grad-CAM to visualize image regions influencing predictions.
+10. Explore the potential of explainable deep learning for agricultural applications.
 
 ---
 
 ## 🌿 Banana Leaf Disease Categories
 
+The proposed model classifies banana leaf images into four categories.
+
 ### 1. Healthy Banana Leaves
 
-Healthy banana leaves generally have consistent green coloration without significant disease-related lesions.
+Healthy banana leaves generally have green foliage without visible disease-related lesions.
 
-Correct identification of healthy leaves is necessary to distinguish normal foliage from disease symptoms and avoid unnecessary interventions.
+The model must correctly identify healthy leaves to distinguish normal foliage from infected leaves.
 
-![Healthy Banana Leaves](assets/fig01.png)
+**Research Paper Figure:** Figure 1
+
+[📷 View Healthy Banana Leaf Images](project.pdf#page=1)
 
 ### 2. Sigatoka Disease
 
-Sigatoka is a major fungal banana leaf disease associated with dark spots and streaks on leaf surfaces.
+Sigatoka is a fungal disease that affects banana leaves.
 
-**Common visual symptoms:**
+It is associated with dark brown or black spots, discoloration, and damage to leaf tissues.
 
-- Small dark-brown or black spots
-- Elongated streaks along leaf structures
-- Yellowing around infected regions
-- Enlarging lesions
-- Drying and necrosis of infected tissue
+**Common symptoms:**
 
-Advanced infections reduce photosynthetic activity and can seriously affect banana production.
+- Small dark spots
+- Brown or black streaks
+- Yellowing of leaf tissue
+- Expanding lesions
+- Drying and necrosis
 
-![Sigatoka Disease](assets/fig02.png)
+Severe infections can reduce the photosynthetic capacity of banana plants.
+
+**Research Paper Figure:** Figure 2
+
+[📷 View Sigatoka Disease Images](project.pdf#page=2)
 
 ### 3. Cordana Leaf Spot
 
-Cordana Leaf Spot, caused by *Cordana musae*, produces characteristic leaf lesions.
+Cordana Leaf Spot is associated with the fungus *Cordana musae*.
 
-**Common visual symptoms:**
+The disease produces visible lesions that may expand and damage leaf tissue.
 
-- Circular or irregular spots
-- Water-soaked patches
-- Brown lesions
-- Drying of infected tissue
-- Premature deterioration of leaves
+**Common symptoms:**
 
-The disease can reduce functional leaf area and contribute to lower plant productivity.
+- Circular spots
+- Water-soaked lesions
+- Brown patches
+- Drying of infected areas
+- Premature leaf damage
 
-![Cordana Leaf Spot](assets/fig03.png)
+**Research Paper Figure:** Figure 3
+
+[📷 View Cordana Disease Images](project.pdf#page=2)
 
 ### 4. Pestalotiopsis Leaf Blight
 
-Pestalotiopsis Leaf Blight is associated with irregular brown lesions and necrotic regions.
+Pestalotiopsis Leaf Blight is associated with fungi from the genus *Pestalotiopsis*.
 
-**Common visual symptoms:**
+It commonly produces irregular brown patches and necrotic leaf regions.
 
-- Irregular brown patches
-- Water-soaked areas
-- Expanding lesions
-- Merging necrotic regions
-- Damaged leaf surfaces
+**Common symptoms:**
 
-Its visual similarities to other fungal diseases can make automated classification challenging.
+- Irregular brown lesions
+- Water-soaked patches
+- Expanding diseased areas
+- Necrotic tissue
+- Merging lesions
 
-![Pestalotiopsis Leaf Blight](assets/fig04.png)
+**Research Paper Figure:** Figure 4
+
+[📷 View Pestalotiopsis Disease Images](project.pdf#page=2)
 
 ---
 
@@ -127,327 +180,488 @@ Its visual similarities to other fungal diseases can make automated classificati
 
 ### BananaLSD Dataset
 
-The research uses the **BananaLSD dataset**, consisting of banana leaf photographs captured under natural farming conditions in Bangladesh.
+The research uses the **BananaLSD dataset**, containing banana leaf photographs captured under natural field conditions.
 
-The original dataset contains **937 RGB images** covering the four classification categories.
+The dataset was collected in the Gazipur region of Bangladesh.
 
-Images were collected using smartphone cameras and standardized to a size of **224 × 224 pixels** for model processing.
+Images were acquired using smartphone cameras and include variations in:
 
-Unlike datasets captured in controlled laboratory conditions, field images contain natural variations in lighting, background, viewing angle, and image composition.
+- Lighting conditions
+- Leaf orientation
+- Background objects
+- Camera angles
+- Disease symptoms
+- Image appearance
 
-These variations make the classification task more realistic.
+These characteristics make the dataset suitable for evaluating deep learning approaches using agricultural field images.
 
-### Original Dataset Composition
+### Original Dataset Distribution
 
-| Disease Category | Original Images | Augmented Images |
+| Class | Original Images | Augmented Images |
 |---|---:|---:|
 | Pestalotiopsis Leaf Blight | 173 | 400 |
 | Sigatoka | 473 | 400 |
 | Cordana Leaf Spot | 162 | 400 |
 | Healthy | 129 | 400 |
-| **Total** | **937** | **1600** |
+| **Total** | **937** | **1,600** |
 
-### Final Experimental Dataset
+The original dataset is imbalanced, with Sigatoka having the highest number of original images and Healthy having the lowest.
 
-| Dataset Split | Number of Images |
+Data augmentation was used to improve representation across the four categories.
+
+### Final Experimental Data Distribution
+
+| Dataset | Number of Images |
 |---|---:|
 | Training | 1,351 |
 | Validation | 120 |
 | Testing | 760 |
 | **Total** | **2,231** |
 
-The test dataset consists of 190 images per class.
+The evaluation test dataset contains 190 images from each class.
 
-The dataset preparation aims to maintain balanced evaluation and reduce the influence of majority classes during training.
+### Dataset Distribution Visualization
 
-### Dataset Distribution
+**Research Paper Figure:** Figure 5
 
-![Dataset Distribution](assets/fig05.png)
+[📊 View Dataset Distribution Graph](project.pdf#page=5)
 
 ---
 
 ## 🔄 Data Preprocessing and Augmentation
 
-Image preprocessing prepares the leaf photographs for CNN training and improves consistency between samples.
+Data preprocessing and augmentation were used to prepare images for model training.
 
 ### Image Preprocessing
 
-- Resize images to 224 × 224 pixels.
-- Process RGB images with three color channels.
-- Organize data into four classification categories.
-- Prepare separate training, validation, and test subsets.
+The images were resized to:
 
-### Data Augmentation
+**224 × 224 × 3**
 
-The research employs several image transformations to improve sample diversity.
+Where:
 
-| Technique | Purpose |
+- 224 represents image height.
+- 224 represents image width.
+- 3 represents RGB color channels.
+
+Standardized image dimensions allow the CNN to process images consistently.
+
+### Data Augmentation Techniques
+
+| Augmentation | Purpose |
 |---|---|
-| Random rotation | Handles variation in leaf orientation |
-| Horizontal flipping | Increases orientation diversity |
-| Width shifting | Simulates horizontal position changes |
-| Height shifting | Simulates vertical position changes |
-| Shearing | Represents viewing-angle distortions |
-| Zooming | Simulates differences in camera distance |
-| Fill mode | Handles empty regions introduced by transformations |
+| Rotation | Introduces different leaf orientations |
+| Horizontal Flipping | Adds orientation diversity |
+| Width Shifting | Simulates horizontal movement |
+| Height Shifting | Simulates vertical movement |
+| Shearing | Simulates geometric distortions |
+| Zooming | Represents different camera distances |
+| Fill Mode | Handles empty pixels after transformation |
 
-The purpose of augmentation is to reduce overfitting and help the CNN learn meaningful disease characteristics despite differences in image acquisition.
+### Why Augmentation?
+
+The original dataset contains unequal numbers of images for different diseases.
+
+Without class balancing, a model may learn to favor majority classes.
+
+Data augmentation expands the available training examples and helps improve generalization.
+
+The research describes using original images for evaluation and augmentation for the training data.
 
 ---
 
-## 🧠 Proposed Architecture
+## 🧠 Proposed Methodology
 
-The proposed deep learning model consists of an initial CNN feature extraction block, three KernelAttention blocks, and a final classification head.
+The proposed approach follows an image-based deep learning classification process.
 
-### Architecture Pipeline
+### Complete Classification Workflow
 
 ```text
-              Banana Leaf Image
-                (224 × 224 × 3)
-                       |
-                       v
-              Conv2D (32 Filters)
-                       |
-                       v
-               Batch Normalization
-                       |
-                       v
-                 ReLU Activation
-                       |
-                       v
-                 MaxPooling2D
-                       |
-                       v
-             KernelAttention Block
-                  (64 Filters)
-                       |
-                       v
-                 MaxPooling2D
-                       |
-                       v
-             KernelAttention Block
-                 (128 Filters)
-                       |
-                       v
-                 MaxPooling2D
-                       |
-                       v
-             KernelAttention Block
-                 (256 Filters)
-                       |
-                       v
-                 MaxPooling2D
-                       |
-                       v
-             Global Average Pooling
-                       |
-                       v
-                Dense (64, ReLU)
-                       |
-                       v
-                  Dropout (0.5)
-                       |
-                       v
-                Dense (4, Softmax)
-                       |
-                       v
-                Disease Prediction
+                  Banana Leaf Dataset
+                           |
+                           v
+                    Data Collection
+                           |
+                           v
+                     Data Cleaning
+                           |
+                           v
+                    Image Resizing
+                      224 × 224
+                           |
+                           v
+                    Data Augmentation
+                           |
+                           v
+                    Dataset Splitting
+                           |
+              +------------+------------+
+              |            |            |
+              v            v            v
+           Training    Validation     Testing
+              |            |            |
+              v            |            |
+         CNN Training      |            |
+              |            |            |
+              v            |            |
+        Feature Extraction |            |
+              |            |            |
+              v            |            |
+       KernelAttention     |            |
+              |            |            |
+              v            |            |
+       Classification Head |            |
+              |            |            |
+              v            v            |
+           Model Evaluation             |
+              |                         |
+              +-------------------------+
+                           |
+                           v
+                 Performance Analysis
+                           |
+                           v
+                Confusion Matrix & ROC
+                           |
+                           v
+                  Grad-CAM Analysis
+                           |
+                           v
+                 Disease Classification
 ```
 
-### Model Architecture Diagram
+The system uses CNN feature extraction and KernelAttention blocks to produce representations suitable for classifying banana leaf conditions.
 
-![CNN with KernelAttention Architecture](assets/fig06.png)
+---
 
-### Architecture Components
+## 🏗️ Model Architecture
 
-#### Initial Convolution Layer
+The proposed CNN architecture integrates a custom spatial attention mechanism at multiple stages.
 
-The first convolution layer contains 32 filters of size 3 × 3.
+The network contains:
 
-The purpose of this layer is to detect low-level features such as edges, textures, boundaries, and simple visual patterns.
+1. Input layer
+2. Initial convolutional layer
+3. Batch normalization
+4. ReLU activation
+5. Max pooling
+6. Three KernelAttention blocks
+7. Global average pooling
+8. Fully connected classification layer
+9. Dropout
+10. Softmax output layer
 
-#### Batch Normalization
+### Architecture Visualization
 
-Batch normalization helps stabilize activations during training.
+**Research Paper Figure:** Figure 6
 
-#### ReLU Activation
+[🧠 View Complete CNN Architecture Diagram](project.pdf#page=6)
 
-The Rectified Linear Unit introduces nonlinearity:
+### Network Architecture
+
+```text
+Input Image
+224 × 224 × 3
+      |
+      v
+Conv2D
+32 filters, 3 × 3
+      |
+      v
+Batch Normalization
+      |
+      v
+ReLU Activation
+      |
+      v
+MaxPooling2D
+2 × 2
+      |
+      v
+KernelAttention
+64 filters
+      |
+      v
+MaxPooling2D
+2 × 2
+      |
+      v
+KernelAttention
+128 filters
+      |
+      v
+MaxPooling2D
+2 × 2
+      |
+      v
+KernelAttention
+256 filters
+      |
+      v
+MaxPooling2D
+2 × 2
+      |
+      v
+Global Average Pooling
+      |
+      v
+Dense Layer
+64 neurons, ReLU
+      |
+      v
+Dropout
+Rate = 0.5
+      |
+      v
+Dense Layer
+4 neurons, Softmax
+      |
+      v
+Predicted Disease Class
+```
+
+### Initial Convolution Layer
+
+The first convolution layer uses 32 filters with a kernel size of 3 × 3.
+
+This layer learns low-level image features such as:
+
+- Edges
+- Shapes
+- Textures
+- Color-related patterns
+
+### Batch Normalization
+
+Batch normalization helps stabilize intermediate representations during training.
+
+### ReLU Activation
+
+ReLU introduces nonlinearity into the network.
+
+Its mathematical expression is:
 
 `ReLU(x) = max(0, x)`
 
-#### Max Pooling
+### Max Pooling
 
-Max pooling reduces spatial feature-map dimensions and computational requirements.
+Max pooling reduces the spatial size of the feature maps.
 
-A pool size of 2 × 2 is used in the architecture.
+The model uses a pooling window of 2 × 2.
 
-#### KernelAttention Blocks
+### Global Average Pooling
 
-Three consecutive attention blocks use:
+Global average pooling converts the feature maps into compact numerical representations.
 
-- 64 filters
-- 128 filters
-- 256 filters
+### Dense Classification Layer
 
-These blocks progressively learn more complex features while applying spatial attention.
+A dense layer containing 64 neurons processes the extracted features.
 
-#### Global Average Pooling
+Dropout with a rate of 0.5 is used before the final output layer.
 
-Global average pooling converts learned spatial feature maps into compact feature representations.
+### Softmax Layer
 
-#### Dense Classification Head
+The final dense layer contains four output neurons.
 
-The final classification stage consists of:
-
-- Dense layer with 64 units and ReLU activation
-- Dropout with rate 0.5
-- Dense output layer with four units and Softmax activation
-
-Softmax produces class probabilities for the four supported categories.
+The Softmax activation function converts output scores into probabilities for the four classes.
 
 ---
 
-## 🔍 KernelAttention: Proposed Spatial Attention Mechanism
+## 🔬 KernelAttention Spatial Attention Mechanism
 
-The main architectural contribution of this research is a custom spatial attention mechanism named **KernelAttention**.
+### Main Research Contribution
 
-Traditional CNNs learn spatial features through convolution operations, but not every region of a leaf image contributes equally to disease identification.
+The primary architectural contribution is a custom spatial attention layer called **KernelAttention**.
 
-A disease may occupy a relatively small region of a leaf while the remaining image contains healthy tissue or background objects.
+Traditional CNNs extract visual features using convolution operations.
 
-KernelAttention aims to increase the influence of diagnostically relevant regions in the learned feature representation.
+However, disease-related patterns may occupy only small portions of a leaf image.
 
-### KernelAttention Internal Architecture
+KernelAttention is designed to place greater emphasis on relevant spatial features while preserving information from the original feature representation.
 
-![KernelAttention Internal Architecture](assets/fig07.png)
+### KernelAttention Architecture
 
-### Working Principle
+**Research Paper Figure:** Figure 7
 
-The attention block creates three learned feature representations:
+[🔍 View KernelAttention Architecture Diagram](project.pdf#page=7)
 
-- Query (Q)
-- Key (K)
-- Value (V)
+### Core Components
 
-These representations are generated using convolutional transformations.
+KernelAttention uses:
 
-### Step 1: Query Generation
+- Query representation (Q)
+- Key representation (K)
+- Value representation (V)
+- Spatial attention map
+- Element-wise multiplication
+- Residual connection
+
+### Step 1: Input Projection
+
+The input tensor is projected when the input and output channel dimensions differ.
+
+```text
+If Input Channels != Output Channels:
+
+    X_projected = Conv1x1(X)
+
+Otherwise:
+
+    X_projected = X
+```
+
+This allows the residual connection to combine compatible feature maps.
+
+### Step 2: Query, Key, and Value Generation
+
+Three convolution-based transformations are applied to the input.
+
+**Query:**
 
 `Q = ReLU(BN(Conv3×3_Q(X)))`
 
-The query representation captures learned visual features from the incoming feature map.
-
-### Step 2: Key Generation
+**Key:**
 
 `K = ReLU(BN(Conv3×3_K(X)))`
 
-The key representation provides another learned description of the image features.
-
-### Step 3: Value Generation
+**Value:**
 
 `V = ReLU(BN(Conv3×3_V(X)))`
 
-The value representation contains the features to be weighted by the attention map.
+Here:
 
-### Step 4: Attention Map Calculation
+- `BN` represents Batch Normalization.
+- `ReLU` represents Rectified Linear Unit.
+- `Conv3×3` represents a convolution using a 3 × 3 kernel.
 
-The query and key representations are combined:
+### Step 3: Spatial Attention Map
+
+Query and key features are combined:
 
 `A_intermediate = Q + K`
 
-A 1 × 1 convolution and sigmoid function then generate the spatial attention map:
+The combined representation is processed using a 1 × 1 convolution and sigmoid activation:
 
 `A = sigmoid(Conv1×1(A_intermediate))`
 
-The sigmoid function maps attention weights to values between 0 and 1.
+The sigmoid function generates attention weights between 0 and 1.
 
-### Step 5: Applying Attention
+### Step 4: Attention-Weighted Features
 
-The attention map is multiplied element-wise with the value representation:
+The value representation is multiplied by the attention map:
 
 `C = V ⊙ A`
 
 Here, `⊙` represents element-wise multiplication.
 
-This allows different locations in the feature maps to receive different attention weights.
+### Step 5: Residual Connection
 
-### Step 6: Residual Connection
-
-The attention-weighted representation is combined with the original or projected input:
+The attention-weighted features are combined with the projected input:
 
 `Y = C + X_projected`
 
-If the input and output channel dimensions are different, a 1 × 1 convolution projects the input to the required dimensions.
+The residual connection helps retain original information while incorporating attention-weighted features.
 
-This residual connection preserves information from earlier feature representations.
+### KernelAttention Workflow
 
-### Advantages of KernelAttention
+```text
+                   Input Feature Map
+                          |
+           +--------------+--------------+
+           |              |              |
+           v              v              v
+       Query (Q)       Key (K)        Value (V)
+           |              |              |
+           v              v              |
+         Conv2D         Conv2D           |
+           |              |              |
+           v              v              |
+      BatchNorm       BatchNorm          |
+           |              |              |
+           v              v              |
+          ReLU           ReLU             |
+           |              |              |
+           +-------+------+              |
+                   |                     |
+                   v                     |
+                Addition                 |
+                   |                     |
+                   v                     |
+                Conv1×1                  |
+                   |                     |
+                   v                     |
+                 Sigmoid                  |
+                   |                     |
+                   v                     |
+               Attention Map             |
+                   |                     |
+                   +----------+----------+
+                              |
+                              v
+                    Element-wise Multiply
+                              |
+                              v
+                     Attention Features
+                              |
+                              v
+                       Residual Add
+                              |
+                              v
+                       Output Features
+```
 
-1. Emphasizes spatially important image features.
-2. Supports the identification of disease-associated lesion patterns.
-3. Integrates attention at multiple architectural depths.
-4. Combines attention-weighted and residual information.
-5. Supports hierarchical feature learning.
-6. Provides an architecture suitable for later visual explanation using Grad-CAM.
+### Benefits of the Mechanism
+
+- Learns spatially weighted feature representations.
+- Provides attention at multiple network stages.
+- Combines attention output with residual information.
+- Supports hierarchical image feature learning.
+- Can emphasize regions associated with disease symptoms.
 
 ---
 
 ## ⚙️ Model Training
 
-The proposed model was evaluated using a training process lasting **40 epochs**.
+The proposed architecture was trained for **40 epochs**.
 
-Training performance was monitored through accuracy and loss measurements.
+Training, validation, and test measurements were examined to analyze convergence.
 
 ### Training Accuracy
 
-![Model Training Accuracy](assets/fig08.png)
+**Research Paper Figure:** Figure 8
 
-The model demonstrated increasing training accuracy during the initial epochs.
+[📈 View Training Accuracy Graph](project.pdf#page=8)
 
-At the final stage of training, the reported performance reached:
+The graph shows the development of model accuracy across the training epochs.
 
-| Metric | Result |
-|---|---:|
-| Test Accuracy | 97.50% |
-| Validation Accuracy | 99.17% |
-| Number of Epochs | 40 |
+The reported final results include:
 
-Training accuracy approached 100% in the final epochs.
+- Validation accuracy: 99.17%
+- Test accuracy: 97.50%
 
 ### Training Loss
 
-![Model Training Loss](assets/fig09.png)
+**Research Paper Figure:** Figure 9
 
-The loss graph displays the training, validation, and test loss curves.
+[📉 View Training Loss Graph](project.pdf#page=9)
 
-The reported curves generally decreased during model training.
+The loss curves generally decrease during training, indicating a reduction in prediction errors.
 
-This indicates that the model reduced prediction errors as the training process progressed.
+The paper reports that the model demonstrates stable learning behavior with limited signs of overfitting in the reported curves.
 
 ---
 
-## 📈 Experimental Results
+## 🏆 Results and Performance
 
-The trained CNN with spatial attention was evaluated using:
-
-- Classification accuracy
-- Precision
-- Recall / sensitivity
-- Specificity
-- F1-score
-- Confusion matrix
-- Receiver Operating Characteristic (ROC) curves
-- Area Under the ROC Curve (AUC)
-- Grad-CAM visualizations
+The proposed model was evaluated using several classification metrics.
 
 ### Overall Test Accuracy
 
-# 97.50%
+**97.50%**
 
-The model correctly classified **741 out of 760 test images**, according to the reported confusion matrix.
+The model was evaluated using a test dataset containing 760 banana leaf images.
 
-### Per-Class Classification Performance
+### Performance Metrics
 
 | Disease | Accuracy | Precision | Recall | Specificity | F1-Score |
 |---|---:|---:|---:|---:|---:|
@@ -458,63 +672,51 @@ The model correctly classified **741 out of 760 test images**, according to the 
 
 ### Cordana Performance
 
-![Cordana Classification Metrics](assets/fig10.png)
+**Research Paper Figure:** Figure 10
 
-Cordana classification achieved:
+[📊 View Cordana Performance Graph](project.pdf#page=9)
 
-- Accuracy: 99.34%
-- Precision: 99.47%
-- Recall: 97.89%
-- Specificity: 99.82%
-- F1-score: 98.67%
+The Cordana class achieved 99.34% reported class-wise accuracy and an F1-score of 98.67%.
 
 ### Healthy Leaf Performance
 
-![Healthy Leaf Classification Metrics](assets/fig11.png)
+**Research Paper Figure:** Figure 11
 
-Healthy leaf classification achieved:
+[📊 View Healthy Leaf Performance Graph](project.pdf#page=10)
 
-- Accuracy: 98.68%
-- Precision: 98.91%
-- Recall: 95.79%
-- Specificity: 99.65%
-- F1-score: 97.33%
+The Healthy class achieved 98.68% reported class-wise accuracy and a recall of 95.79%.
 
 ### Sigatoka Performance
 
-![Sigatoka Classification Metrics](assets/fig12.png)
+**Research Paper Figure:** Figure 12
 
-Sigatoka classification achieved:
+[📊 View Sigatoka Performance Graph](project.pdf#page=10)
 
-- Accuracy: 99.21%
-- Precision: 98.94%
-- Recall: 97.89%
-- Specificity: 99.65%
-- F1-score: 98.41%
+Sigatoka achieved 99.21% reported class-wise accuracy and an F1-score of 98.41%.
 
 ### Pestalotiopsis Performance
 
-![Pestalotiopsis Classification Metrics](assets/fig13.png)
+**Research Paper Figure:** Figure 13
 
-Pestalotiopsis classification achieved:
+[📊 View Pestalotiopsis Performance Graph](project.pdf#page=10)
 
-- Accuracy: 97.76%
-- Precision: 93.03%
-- Recall: 98.42%
-- Specificity: 97.54%
-- F1-score: 95.65%
+Pestalotiopsis achieved 97.76% reported class-wise accuracy.
 
-The lower precision of the Pestalotiopsis class indicates that some images from other categories were incorrectly predicted as Pestalotiopsis.
+Its precision of 93.03% is lower than that of the other classes.
+
+This indicates that some images belonging to other categories were predicted as Pestalotiopsis.
 
 ---
 
-## 🧮 Confusion Matrix Analysis
+## 🎯 Confusion Matrix
 
-A confusion matrix describes the number of correct and incorrect predictions for each disease category.
+The confusion matrix evaluates how frequently the model correctly and incorrectly classifies images.
 
-![Confusion Matrix](assets/fig14.png)
+**Research Paper Figure:** Figure 14
 
-### Test Confusion Matrix
+[🔍 View Confusion Matrix Heatmap](project.pdf#page=11)
+
+### Confusion Matrix Results
 
 | Actual / Predicted | Cordana | Healthy | Pestalotiopsis | Sigatoka |
 |---|---:|---:|---:|---:|
@@ -523,302 +725,340 @@ A confusion matrix describes the number of correct and incorrect predictions for
 | Pestalotiopsis | 0 | 2 | 187 | 1 |
 | Sigatoka | 1 | 0 | 3 | 186 |
 
-### Observations
+### Analysis
 
-**Cordana:** 186 of 190 samples were correctly classified.
+**Cordana:** 186 of 190 images were correctly classified, while four were classified as Pestalotiopsis.
 
-**Healthy:** 182 of 190 samples were correctly classified. Seven were predicted as Pestalotiopsis and one as Sigatoka.
+**Healthy:** 182 of 190 images were correctly classified. Seven were classified as Pestalotiopsis and one as Sigatoka.
 
-**Pestalotiopsis:** 187 of 190 samples were correctly classified.
+**Pestalotiopsis:** 187 of 190 images were correctly classified. Two were classified as Healthy and one as Sigatoka.
 
-**Sigatoka:** 186 of 190 samples were correctly classified.
+**Sigatoka:** 186 of 190 images were correctly classified. One was classified as Cordana and three as Pestalotiopsis.
 
-The confusion matrix shows that most samples are located on the main diagonal, representing correct predictions.
+### Key Observations
 
-The most frequent error involves predicting Healthy images as Pestalotiopsis.
+- The majority of samples are correctly classified.
+- Pestalotiopsis receives the highest number of false-positive predictions.
+- Some Healthy images are confused with Pestalotiopsis.
+- Sigatoka and Cordana demonstrate strong classification performance.
+
+The diagonal of the confusion matrix contains 741 correctly classified test samples.
 
 ---
 
-## 📉 ROC Curves and AUC Analysis
+## 📈 ROC Curve and AUC Analysis
 
-Receiver Operating Characteristic curves measure how well a classification model distinguishes positive and negative examples across different decision thresholds.
+The Receiver Operating Characteristic (ROC) curve evaluates the ability of a classifier to distinguish between positive and negative examples at different classification thresholds.
 
-The ROC curve plots:
+The curve plots:
 
 - True Positive Rate (TPR)
 - False Positive Rate (FPR)
 
-The Area Under the Curve (AUC) summarizes the discriminatory performance.
+Area Under the Curve (AUC) summarizes discrimination performance.
 
-### Multi-Class ROC Analysis
+### Overall ROC Performance
 
-![Multi-Class ROC Curve](assets/fig15.png)
+**Research Paper Figure:** Figure 15
 
-The research reports:
+[📈 View Multi-Class ROC Curve](project.pdf#page=11)
 
-| Measurement | AUC |
+| ROC Metric | Reported AUC |
 |---|---:|
-| Micro-Average AUC | 0.999 |
-| Macro-Average AUC | 0.999 |
-| Cordana AUC | 0.999 |
-| Healthy AUC | 0.999 |
-| Pestalotiopsis AUC | 0.998 |
-| Sigatoka AUC | 1.000 |
+| Micro-average | 0.999 |
+| Macro-average | 0.999 |
 
-### Cordana ROC Curve
+### Class-Wise ROC-AUC
 
-![Cordana ROC Curve](assets/fig16.png)
+| Disease | AUC |
+|---|---:|
+| Cordana | 0.999 |
+| Healthy | 0.999 |
+| Pestalotiopsis | 0.998 |
+| Sigatoka | 1.000 |
 
-**AUC: 0.999**
+### Cordana ROC
 
-The ROC result indicates strong discrimination between Cordana and the remaining classes.
+**Research Paper Figure:** Figure 16
 
-### Healthy ROC Curve
+[📈 View Cordana ROC Curve](project.pdf#page=12)
 
-![Healthy ROC Curve](assets/fig17.png)
+AUC: 0.999
 
-**AUC: 0.999**
+### Healthy ROC
 
-The reported result indicates strong discrimination of healthy leaves from diseased samples.
+**Research Paper Figure:** Figure 17
 
-### Pestalotiopsis ROC Curve
+[📈 View Healthy ROC Curve](project.pdf#page=12)
 
-![Pestalotiopsis ROC Curve](assets/fig18.png)
+AUC: 0.999
 
-**AUC: 0.998**
+### Pestalotiopsis ROC
 
-This class has the lowest reported AUC among the four categories, although its discriminatory performance remains high on the test dataset.
+**Research Paper Figure:** Figure 18
 
-### Sigatoka ROC Curve
+[📈 View Pestalotiopsis ROC Curve](project.pdf#page=12)
 
-![Sigatoka ROC Curve](assets/fig19.png)
+AUC: 0.998
 
-**AUC: 1.000**
+### Sigatoka ROC
 
-The reported Sigatoka ROC-AUC indicates perfect ranking discrimination on the evaluated test set.
+**Research Paper Figure:** Figure 19
 
-This does not mean every Sigatoka image was classified correctly at the selected decision threshold.
+[📈 View Sigatoka ROC Curve](project.pdf#page=12)
+
+AUC: 1.000
+
+The reported AUC results indicate strong class discrimination on the evaluated dataset.
+
+An AUC of 1.000 for Sigatoka does not imply that every Sigatoka sample was classified correctly at the selected decision threshold.
 
 ---
 
 ## 🔥 Grad-CAM Explainability
 
-Deep learning systems can provide accurate predictions while offering limited visibility into how their decisions are made.
+Grad-CAM stands for **Gradient-weighted Class Activation Mapping**.
 
-To support interpretability, this project uses **Gradient-weighted Class Activation Mapping (Grad-CAM)**.
+It is a visualization technique used to identify image regions that influence CNN predictions.
 
-Grad-CAM produces heatmaps that identify image regions contributing to the model's predicted class.
+Grad-CAM produces heatmaps based on the gradients flowing into selected convolutional feature maps.
 
 ### Why Grad-CAM?
 
-Grad-CAM helps investigate whether the trained CNN is focusing on relevant disease symptoms or unrelated image regions.
+A CNN may accurately classify an image, but its internal decision process can be difficult to understand.
 
-For banana leaf disease classification, important features can include:
+Grad-CAM helps researchers inspect whether the network is focusing on relevant features.
 
-- Dark fungal spots
-- Brown leaf lesions
-- Disease-related discoloration
-- Necrotic patches
-- Vein-oriented streaks
+For banana leaf disease classification, these may include:
+
+- Brown lesions
+- Dark spots
+- Yellowing
+- Necrotic regions
+- Disease-related streaks
 - Changes in leaf texture
 
-### Grad-CAM Visualizations
+### Class-Wise Grad-CAM Visualizations
 
-#### Cordana Grad-CAM
+#### Cordana
 
-![Cordana Grad-CAM](assets/fig20.png)
+**Research Paper Figure:** Figure 20
 
-The heatmap can be used to inspect the regions influencing Cordana predictions.
+[🔥 View Cordana Grad-CAM](project.pdf#page=13)
 
-#### Healthy Leaf Grad-CAM
+#### Healthy Leaves
 
-![Healthy Leaf Grad-CAM](assets/fig21.png)
+**Research Paper Figure:** Figure 21
 
-This visualization helps investigate the regions influencing predictions of healthy foliage.
+[🔥 View Healthy Leaf Grad-CAM](project.pdf#page=13)
 
-#### Sigatoka Grad-CAM
+#### Sigatoka
 
-![Sigatoka Grad-CAM](assets/fig22.png)
+**Research Paper Figure:** Figure 22
 
-The research discusses attention patterns associated with leaf veins and disease-related streaks.
+[🔥 View Sigatoka Grad-CAM](project.pdf#page=13)
 
-#### Pestalotiopsis Grad-CAM
+The research describes attention patterns associated with vein-oriented disease streaks.
 
-![Pestalotiopsis Grad-CAM](assets/fig23.png)
+#### Pestalotiopsis
 
-This visualization helps examine the image regions influencing Pestalotiopsis predictions.
+**Research Paper Figure:** Figure 23
 
-### Explainability Benefits
+[🔥 View Pestalotiopsis Grad-CAM](project.pdf#page=13)
 
-- Visual inspection of influential image regions
-- Improved understanding of model behavior
-- Identification of possible background bias
-- Support for model debugging
-- Better communication of predictions to researchers
+### Importance of Explainability
 
-Grad-CAM provides evidence about model attention, but a heatmap alone does not establish that every highlighted region is a medically or botanically correct disease indicator.
+Grad-CAM helps with:
+
+1. Understanding model predictions.
+2. Visualizing influential regions.
+3. Investigating classification errors.
+4. Detecting possible attention to irrelevant backgrounds.
+5. Supporting further model validation.
+
+Grad-CAM helps interpret predictions, but it does not independently prove that a highlighted region is a biologically correct disease marker.
 
 ---
 
-## 🆚 Comparison With Related Research
+## 🆚 Comparison With Existing Research
 
-The research paper reviews several previously published approaches for banana leaf and plant disease detection.
+The research paper reviews multiple approaches to banana leaf and crop disease classification.
 
-| Method | Reported Accuracy |
+| Model / Method | Reported Accuracy |
 |---|---:|
 | BananaSqueezeNet | 96.25% |
 | Eight-Layer DCNN | 98.92% |
 | DenseNet-201 | 98.12% |
 | VGG16 | 97.81% |
+| EfficientNet-B0 | 87.81% |
 | ResNet50 | 94.00% |
 | VGG19 | 94.00% |
 | TGVFCMS + CNN | 93.45% |
 | ANN + SIFT | 95.00% |
-| **Proposed CNN + KernelAttention** | **97.50%** |
+| Proposed CNN + KernelAttention | **97.50%** |
 
-**Important:** These results originate from different studies with potentially different datasets, class definitions, splits, and experimental conditions.
+**Note:** These results come from different published studies and may use different datasets, disease classes, and evaluation procedures.
 
-Therefore, the table is a literature summary and should not be treated as a controlled, identical-dataset benchmark.
-
-The main architectural distinction of this project is its custom KernelAttention mechanism with hierarchical spatial attention.
+They are included as literature context and are not direct, controlled benchmark results.
 
 ---
 
-## 🏆 Key Contributions
+## 💡 Key Contributions
 
-### 1. Custom KernelAttention Mechanism
+### 1. Custom KernelAttention Layer
 
-The research introduces a spatial attention module combining convolutional query, key, and value representations with a residual connection.
+A spatial attention mechanism using convolution-based query, key, and value transformations.
 
-### 2. Hierarchical Spatial Attention
+### 2. Hierarchical Attention
 
-Three attention blocks progressively extract more complex disease-related image features.
+Three KernelAttention blocks integrate attention at different network depths.
 
-### 3. Four-Class Disease Classification
+### 3. Four-Class Classification
 
-The model predicts Healthy, Sigatoka, Cordana, and Pestalotiopsis classes.
+The system distinguishes Healthy, Sigatoka, Cordana, and Pestalotiopsis images.
 
-### 4. Dataset Balancing
+### 4. Data Augmentation
 
-Image augmentation helps address the imbalance in original disease categories.
+Augmentation is used to improve training data diversity and address class imbalance.
 
-### 5. Detailed Experimental Evaluation
+### 5. Detailed Evaluation
 
-Performance is examined using classification metrics, ROC curves, AUC scores, and a confusion matrix.
+The research includes accuracy, precision, recall, specificity, F1-score, confusion matrix, and ROC-AUC evaluation.
 
-### 6. Visual Interpretability
+### 6. Explainable AI
 
-Grad-CAM visualizations provide a way to inspect which regions influence model predictions.
+Grad-CAM provides visual information about the image regions influencing predictions.
 
 ---
 
 ## ⚠️ Limitations
 
-Although the reported model demonstrates strong classification performance, several limitations remain.
+The research has several limitations that should be considered before real-world deployment.
 
-### Dataset Size
+### Limited Original Dataset
 
-The original dataset contains 937 images, which limits the diversity of observed conditions.
+The original dataset contains 937 images.
 
-### Geographic Diversity
+Additional data could help evaluate model generalization.
 
-The dataset was collected in a specific geographic region. Performance may differ in other countries or growing environments.
+### Geographic Dependence
 
-### Image Quality
+Images were collected from a specific region of Bangladesh.
 
-Poor lighting, motion blur, occlusions, and low-resolution images may affect predictions.
+Performance on banana leaves from other countries has not been established by the reported results.
 
 ### Similar Disease Symptoms
 
-Some fungal diseases produce visually similar leaf lesions, which can cause misclassification.
+Some disease categories share visual features, leading to occasional misclassification.
 
-### Class Coverage
+### Limited Disease Coverage
 
-The classifier supports four categories and does not cover all banana diseases, pests, or nutrient deficiencies.
+The model identifies only four categories and does not cover every disease affecting banana plants.
 
-### Real-World Validation
+### Environmental Variations
 
-Additional evaluation across independent farms, camera devices, and unseen environmental conditions is needed before making broad deployment claims.
+Different lighting conditions, camera resolutions, backgrounds, and leaf orientations could influence performance.
 
-### Model Comparison
+### External Validation
 
-A controlled ablation experiment comparing the same CNN with and without KernelAttention would be useful for measuring the contribution of the attention mechanism.
+Independent evaluation on new field datasets would help establish reliability under different real-world conditions.
 
----
+### Attention Mechanism Evaluation
 
-## 🚀 Future Enhancements
-
-Potential extensions of the research include:
-
-1. Developing a web application for uploading banana leaf images.
-2. Deploying the model through a mobile application.
-3. Expanding the dataset to additional banana diseases.
-4. Introducing disease severity estimation.
-5. Supporting disease localization or segmentation.
-6. Evaluating lightweight architectures for edge devices.
-7. Testing robustness against different lighting and camera conditions.
-8. Performing ablation experiments on KernelAttention blocks.
-9. Comparing CNN-based attention with modern vision transformer approaches.
-10. Conducting field trials with independent agricultural datasets.
-
-These are proposed future directions, not completed features.
+A controlled ablation study would help determine the improvement specifically attributable to KernelAttention.
 
 ---
 
-## 📁 GitHub Repository Structure
+## 🚀 Future Scope
+
+Potential future improvements include:
+
+- Developing a farmer-friendly web interface.
+- Building a mobile application for leaf image classification.
+- Extending the model to additional diseases.
+- Improving prediction reliability using larger datasets.
+- Adding disease severity estimation.
+- Implementing real-time image classification.
+- Optimizing the model for mobile devices.
+- Comparing CNN attention mechanisms with transformer-based architectures.
+- Conducting independent field evaluations.
+- Performing ablation experiments on the KernelAttention blocks.
+
+These are future development possibilities and are not presented as already implemented features.
+
+---
+
+## 📂 Repository Structure
 
 ```text
 Banana-Leaf-Disease-Classification/
 │
 ├── README.md
 │
-├── project.pdf
-│
-└── assets/
-    ├── fig01.png
-    ├── fig02.png
-    ├── fig03.png
-    ├── fig04.png
-    ├── fig05.png
-    ├── fig06.png
-    ├── fig07.png
-    ├── fig08.png
-    ├── fig09.png
-    ├── fig10.png
-    ├── fig11.png
-    ├── fig12.png
-    ├── fig13.png
-    ├── fig14.png
-    ├── fig15.png
-    ├── fig16.png
-    ├── fig17.png
-    ├── fig18.png
-    ├── fig19.png
-    ├── fig20.png
-    ├── fig21.png
-    ├── fig22.png
-    └── fig23.png
+└── project.pdf
 ```
 
-The structure above organizes the research documentation and its visual assets. The model source code and trained weights must be added separately if they are available.
+### Files
+
+**README.md**
+
+Contains the complete research project overview, architecture explanation, dataset information, methodology, evaluation results, and links to figures.
+
+**project.pdf**
+
+Contains the research paper with its original figures, tables, graphs, mathematical formulations, and experimental findings.
 
 ---
 
 ## 📄 Research Paper
 
-The complete research paper is available in this repository.
+**Title:** Automated Detection and Classification of Banana Leaf Diseases Using Convolutional Neural Network With Spatial Attention Mechanism
 
-### [📖 Read the Full Research Paper](project.pdf)
+The full research document includes:
 
-**Title:**
+- Introduction
+- Related Works
+- Dataset Description
+- Data Preprocessing
+- Model Architecture
+- KernelAttention Mechanism
+- Mathematical Formulation
+- Results and Discussion
+- Confusion Matrix
+- ROC-AUC Analysis
+- Grad-CAM Visualization
+- References
 
-Automated Detection and Classification of Banana Leaf Diseases Using Convolutional Neural Network With Spatial Attention Mechanism
+### 📖 [Read the Complete Research Paper](project.pdf)
 
-The paper describes the dataset, proposed architecture, mathematical formulation, experiments, performance metrics, and Grad-CAM visualizations.
+### 🖼️ Research Figures
+
+| Figure | Description | Link |
+|---|---|---|
+| Fig. 1 | Healthy Banana Leaves | [View](project.pdf#page=1) |
+| Fig. 2 | Sigatoka Disease | [View](project.pdf#page=2) |
+| Fig. 3 | Cordana Disease | [View](project.pdf#page=2) |
+| Fig. 4 | Pestalotiopsis Disease | [View](project.pdf#page=2) |
+| Fig. 5 | Dataset Distribution | [View](project.pdf#page=5) |
+| Fig. 6 | CNN Architecture | [View](project.pdf#page=6) |
+| Fig. 7 | KernelAttention Architecture | [View](project.pdf#page=7) |
+| Fig. 8 | Model Accuracy | [View](project.pdf#page=8) |
+| Fig. 9 | Model Loss | [View](project.pdf#page=9) |
+| Fig. 10 | Cordana Performance | [View](project.pdf#page=9) |
+| Fig. 11 | Healthy Performance | [View](project.pdf#page=10) |
+| Fig. 12 | Sigatoka Performance | [View](project.pdf#page=10) |
+| Fig. 13 | Pestalotiopsis Performance | [View](project.pdf#page=10) |
+| Fig. 14 | Confusion Matrix | [View](project.pdf#page=11) |
+| Fig. 15 | Multi-Class ROC Curve | [View](project.pdf#page=11) |
+| Fig. 16 | Cordana ROC | [View](project.pdf#page=12) |
+| Fig. 17 | Healthy ROC | [View](project.pdf#page=12) |
+| Fig. 18 | Pestalotiopsis ROC | [View](project.pdf#page=12) |
+| Fig. 19 | Sigatoka ROC | [View](project.pdf#page=12) |
+| Fig. 20–23 | Grad-CAM Visualizations | [View](project.pdf#page=13) |
 
 ---
 
-## 👨‍💻 Authors
+## 👨‍💻 Research Authors
 
 **Hitesh Shivkumar**  
 School of Computer Science and Engineering  
@@ -838,52 +1078,54 @@ Vellore Institute of Technology
 
 ---
 
-## 🛠️ Technologies and Concepts
+## 🛠️ Technical Concepts
 
-The project is based on:
-
+- Artificial Intelligence
 - Deep Learning
 - Convolutional Neural Networks
-- Computer Vision
-- Spatial Attention
-- Image Classification
+- Spatial Attention Mechanisms
+- Image Preprocessing
 - Image Augmentation
-- Batch Normalization
+- Image Classification
 - Residual Connections
-- Softmax Classification
-- ROC-AUC Evaluation
-- Confusion Matrix Analysis
-- Grad-CAM Explainability
+- Batch Normalization
+- Global Average Pooling
+- Softmax Activation
+- Confusion Matrix
+- Classification Metrics
+- ROC-AUC
+- Grad-CAM
+- Explainable AI
 
 ---
 
-## 🌾 Applications
+## 🌾 Potential Applications
 
-Potential applications include:
+The research can support future development in:
 
-- Automated agricultural disease screening
-- AI-assisted banana plantation monitoring
-- Research in plant pathology
-- Agricultural computer vision
-- Early-stage disease classification
-- Decision-support systems for farmers
-- Explainable artificial intelligence in agriculture
-
-These are potential application areas and do not imply that a production-ready agricultural system has been deployed.
+- AI-assisted agricultural disease identification
+- Banana plantation monitoring
+- Plant disease research
+- Automated crop health analysis
+- Computer vision in agriculture
+- Farmer decision-support tools
+- Explainable agricultural AI systems
 
 ---
 
 ## ✅ Conclusion
 
-This project investigates the classification of banana leaf diseases using a CNN integrated with a custom KernelAttention spatial attention mechanism.
+This research presents a Convolutional Neural Network integrated with a custom KernelAttention spatial attention mechanism for automated banana leaf disease classification.
 
-The proposed model was evaluated on a four-class banana leaf dataset and achieved **97.50% reported test accuracy**.
+The model classifies four banana leaf conditions: Healthy, Sigatoka, Cordana Leaf Spot, and Pestalotiopsis Leaf Blight.
 
-Its strongest reported classification results include high precision and recall across the disease categories, near-perfect ROC-AUC measurements, and interpretable Grad-CAM heatmaps.
+Using the BananaLSD dataset, the proposed method achieved **97.50% test accuracy**.
 
-The proposed approach provides a research foundation for developing computer vision-based agricultural disease screening systems.
+Its performance was evaluated using multiple classification metrics, confusion matrix analysis, ROC curves, and AUC measurements.
 
-Further work is needed to establish generalization on independent datasets and evaluate the contribution of the attention mechanism through controlled experiments.
+Grad-CAM visualizations were used to investigate the image regions influencing model predictions.
+
+The study provides a foundation for further research into attention-based deep learning models for agricultural disease diagnosis.
 
 ---
 
@@ -891,16 +1133,16 @@ Further work is needed to establish generalization on independent datasets and e
 
 **Koushik Daggupati**
 
-GitHub: [DGSKOUSHIK](https://github.com/DGSKOUSHIK)
+**GitHub:** [DGSKOUSHIK](https://github.com/DGSKOUSHIK)
 
-Repository: [Banana-Leaf-Disease-Classification](https://github.com/DGSKOUSHIK/Banana-Leaf-Disease-Classification)
+**Repository:** [Banana-Leaf-Disease-Classification](https://github.com/DGSKOUSHIK/Banana-Leaf-Disease-Classification)
 
 ---
 
 <p align="center">
-  <b>Automated Banana Leaf Disease Classification Using Deep Learning and Spatial Attention</b>
+  <b>🍌 Banana Leaf Disease Classification Using CNN and KernelAttention</b>
 </p>
 
 <p align="center">
-  Research Project | Computer Vision | Agricultural Artificial Intelligence
+  <i>Deep Learning | Computer Vision | Explainable AI | Smart Agriculture</i>
 </p>
